@@ -20,6 +20,10 @@ use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 /**
  *
@@ -38,42 +42,31 @@ final class DonationController extends AbstractController
 
     /**
      * @param DonationRequestService $service
+     * @param TransparentAccountReporterService $reporterService
      */
-    public function __construct(DonationRequestService $service, TransparentAccountReporterService $reporterService)
-    {
+    public function __construct(
+        DonationRequestService $service,
+        TransparentAccountReporterService $reporterService
+    ) {
         $this->service = $service;
         $this->reporterService = $reporterService;
     }
 
 
     /**
+     * @param Request $request
      * @return Response
      *
-     * @throws Exception
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function index(Request $request): Response
     {
-        $donationRequest = new DonationRequest();
-        $form = $this->createForm(DonationRequestType::class, $donationRequest);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var DonationRequest $donationRequest */
-            $donationRequest = $form->getData();
-            $this->service->save($donationRequest);
-
-            return $this->redirectToRoute('donation_success');
-        }
-
         $donatedAmount = $this->reporterService->getDonatedAmount();
 
-        return $this->render(
-            'donation.html.twig',
-            [
-                'form' => $form->createView(),
-                'donatedAmount' => $donatedAmount
-            ]
-        );
+        return $this->render('donation.html.twig', ['donatedAmount' => $donatedAmount]);
     }
 
     /**
@@ -87,9 +80,24 @@ final class DonationController extends AbstractController
     /**
      * @return Response
      */
-    public function non_finance(Request $request): Response
+    public function nonFinance(Request $request): Response
     {
-        return $this->render('donation-nonfinance.html.twig');
+        $donationRequest = new DonationRequest();
+        $form = $this->createForm(DonationRequestType::class, $donationRequest);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var DonationRequest $donationRequest */
+            $donationRequest = $form->getData();
+            $this->service->save($donationRequest);
+
+            return $this->redirectToRoute('donation_success');
+        }
+
+
+
+
+        return $this->render('donation-nonfinance.html.twig', ['form' => $form->createView()]);
     }
 
     /**

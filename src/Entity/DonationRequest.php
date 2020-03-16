@@ -231,4 +231,20 @@ class DonationRequest
 
         $this->donatedItems->add(DonationRequestsItems::fromRequest($this, $item, $quantity));
     }
+
+    /**
+     * @return Collection
+     */
+    public function getDonatedItems(): Collection
+    {
+        return $this->donatedItems;
+    }
+
+    /**
+     * @param Collection $donatedItems
+     */
+    public function setDonatedItems(Collection $donatedItems): void
+    {
+        $this->donatedItems = $donatedItems;
+    }
 }

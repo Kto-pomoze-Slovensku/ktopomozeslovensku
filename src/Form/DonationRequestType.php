@@ -11,16 +11,22 @@ namespace App\Form;
 
 use App\Entity\Item;
 use App\Entity\DonationRequest;
+use App\Form\Embeded\ItemRequestEmbeddedType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\EqualTo;
@@ -121,7 +127,7 @@ final class DonationRequestType extends AbstractType
         ]);
 
         $builder->add('submit', SubmitType::class, [
-                'label' => 'ODOSLAť DAR', 'attr' => ['class' => 'btn-default']
+                'label' => 'Odoslať', 'attr' => ['class' => 'btn-default']
             ]
         );
     }

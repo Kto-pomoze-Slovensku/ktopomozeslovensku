@@ -33,8 +33,8 @@ class Donation
     private $recipient;
 
     /**
-     * @var DonationItem
-     * @ORM\ManyToOne(targetEntity="App\Entity\DonationItem", inversedBy="donations")
+     * @var Item
+     * @ORM\ManyToOne(targetEntity="App\Entity\Item", inversedBy="donations")
      * @ORM\JoinColumn(name="donation_item_id", referencedColumnName="id", nullable=false)
      */
     private $donationItem;
@@ -76,7 +76,7 @@ class Donation
     }
 
     /**
-     * @return DonationItem
+     * @return Item
      */
     public function getDonationItem()
     {
@@ -84,9 +84,9 @@ class Donation
     }
 
     /**
-     * @param DonationItem $donationItem
+     * @param Item $donationItem
      */
-    public function setDonationItem(DonationItem $donationItem): void
+    public function setDonationItem(Item $donationItem): void
     {
         $this->donationItem = $donationItem;
     }
@@ -126,7 +126,7 @@ class Donation
     public function __toString(): string
     {
         return sprintf(
-            "%s v množstve %d pre %s",
+            '%s v množstve %d pre %s',
             (string)$this->donationItem,
             $this->count,
             (string)$this->recipient
