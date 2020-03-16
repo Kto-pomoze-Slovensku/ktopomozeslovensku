@@ -97,6 +97,6 @@ final class DonationController extends AbstractController
      */
     public function success(): Response
     {
-        return $this->render('dontation-success.html.twig');
+        return $this->render('donation-success.html.twig');
     }
 }
