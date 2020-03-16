@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('/static/fonts/icomoon.ttf?4c04sm') format('truetype'),
-    url('/static/fonts/icomoon.woff?4c04sm') format('woff'),
-    url('/static/fonts/icomoon.svg?4c04sm#icomoon') format('svg');
+    url('/static/fonts/icomoon.ttf?4c05sm') format('truetype'),
+    url('/static/fonts/icomoon.woff?4c05sm') format('woff'),
+    url('/static/fonts/icomoon.svg?4c05sm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-brand-linkedin:before {
+  content: "\e907";
+}
 .icon-close-big:before {
   content: "\e906";
 }
