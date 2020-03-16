@@ -19,27 +19,15 @@
 
       <div class="article__body">
         <ul>
+          {% for donation in donations %}
           <li class="l-log">
-            <span class="l-log__date">13. 3. 2020</span>
+            <span class="l-log__date">{{ donation.donatedAt|date("d. m. Y") }}</span>
             <span class="l-log__desc">
-              <strong>Fakultná nemocnica Martin.</strong>
-                Pre obvodných, všeobecných lekárov a pediatrov, 3x5 litrov 80% dezinfekcie na ruky.
-              </span>
+            <strong>{{ donation.recipient.institutionName }}.</strong>
+              {{ donation.donationItem.name }}, {{ donation.count }} ks
+            </span>
           </li>
-          <li class="l-log">
-            <span class="l-log__date">13. 3. 2020</span>
-            <span class="l-log__desc">
-              <strong>BaMaMed Nitra.</strong>
-                Doručených 100ks rúšok
-              </span>
-          </li>
-          <li class="l-log">
-            <span class="l-log__date">20. 3. 2020</span>
-            <span class="l-log__desc">
-              <strong>BaMaMed Nitra.</strong>
-                Doručených 300ks rúšok, 300 párov rukavíc, 600 respi
-              </span>
-          </li>
+          {% endfor %}
         </ul>
 
         <a href="{{ path('recipients') }}">Zobraziť všetko ({{ donationsCount }})</a>
