@@ -13,7 +13,6 @@ use App\Service\Account\Exception\TryAgainLater;
 use App\Service\Account\Exception\UnableToDownloadAccountStatement;
 use App\Service\Account\Model\AccountStatement;
 use App\Service\Account\Model\Data;
-use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +24,7 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 /**
  *
  */
-final class AccountStatementDownloader
+final class AccountApiService
 {
     /**
      * @var SerializerInterface
@@ -56,24 +55,6 @@ final class AccountStatementDownloader
         $this->fioApiUrl = $fioApiUrl;
         $this->fioApiToken = $fioApiToken;
     }
-    
-    /**
-     * @param string $date
-     *
-     * @return bool
-     *
-     * @throws ClientExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws TransportExceptionInterface
-     */
-    public function resetReportMark(string $date): bool
-    {
-        $client = HttpClient::createForBaseUri($this->fioApiUrl);
-        $response = $client->request('GET', sprintf('set-last-date/%s/%s', $this->fioApiToken, $date));
-
-        return $response->getContent(true) === '';
-    }
 
     /**
      *
@@ -84,7 +65,7 @@ final class AccountStatementDownloader
      * @throws RedirectionExceptionInterface
      * @throws ServerExceptionInterface
      */
-    private function downloadReport(): AccountStatement
+    public function downloadReport(): AccountStatement
     {
         $client = HttpClient::createForBaseUri($this->fioApiUrl);
         $response = $client->request('GET', sprintf('last/%s/transactions.json', $this->fioApiToken));
@@ -105,5 +86,23 @@ final class AccountStatementDownloader
         );
 
         return $data->getAccountStatement();
+    }
+
+    /**
+     * @param string $date
+     *
+     * @return bool
+     *
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
+     * @throws TransportExceptionInterface
+     */
+    public function resetReportMark(string $date): bool
+    {
+        $client = HttpClient::createForBaseUri($this->fioApiUrl);
+        $response = $client->request('GET', sprintf('set-last-date/%s/%s/', $this->fioApiToken, $date));
+
+        return $response->getContent(true) === '';
     }
 }

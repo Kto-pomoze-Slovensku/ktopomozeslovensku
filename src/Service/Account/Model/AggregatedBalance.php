@@ -12,7 +12,7 @@ namespace App\Service\Account\Model;
 /**
  *
  */
-final class AggregatedBalanceDTO
+final class AggregatedBalance
 {
     /**
      * @var float

@@ -14,7 +14,7 @@ use DateTimeImmutable;
 /**
  *
  */
-final class AggregatedTransactionBalanceDTO
+final class AggregatedTransactionBalance
 {
     /**
      * @var DateTimeImmutable

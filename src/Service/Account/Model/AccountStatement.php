@@ -25,54 +25,27 @@ final class AccountStatement
      */
     private $info;
 
-//    /**
-//     * @var Collection|Transaction[]
-//     *
-//     * @Serializer\Type(name="ArrayCollection<'App\Service\Account\Model\Info\Transaction'>")
-//     * @Serializer\SerializedName(name="transactionList")
-//     */
-//    private $transactionList;
+    /**
+     * @var TransactionList
+     *
+     * @Serializer\Type(name="App\Service\Account\Model\TransactionList")
+     * @Serializer\SerializedName("transactionList")
+     */
+    private $transactionList;
 
-//    /**
-//     * @param Info $info
-//     * @param Collection $transactionList
-//     *
-//     */
-//    public function __construct(Info $info, Collection $transactionList)
-//    {
-//        $this->info = $info;
-//        $this->transactionList = $transactionList;
-//    }
-//
-//    /**
-//     * @return Info
-//     */
-//    public function getInfo(): Info
-//    {
-//        return $this->info;
-//    }
-//
-//    /**
-//     * @param Info $info
-//     */
-//    public function setInfo(Info $info): void
-//    {
-//        $this->info = $info;
-//    }
-//
-//    /**
-//     * @return Transaction[]|Collection
-//     */
-//    public function getTransactionList(): Collection
-//    {
-//        return $this->transactionList;
-//    }
-//
-//    /**
-//     * @param Collection $transactionList
-//     */
-//    public function setTransactionList(Collection $transactionList): void
-//    {
-//        $this->transactionList = $transactionList;
-//    }
+    /**
+     * @return Info
+     */
+    public function getInfo(): Info
+    {
+        return $this->info;
+    }
+
+    /**
+     * @return TransactionList
+     */
+    public function getTransactionList(): TransactionList
+    {
+        return $this->transactionList;
+    }
 }
