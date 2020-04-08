@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN echo "xdebug.remote_host=docker.for.mac.host.internal" >> /etc/php/7.3/fpm/conf.d/20-xdebug.ini && \
+RUN echo "xdebug.remote_host=host.docker.internal" >> /etc/php/7.3/fpm/conf.d/20-xdebug.ini && \
         echo 'xdebug.file_link_format="phpstorm://open?url=file://%%f&line=%%l"' >> /etc/php/7.3/fpm/conf.d/20-xdebug.ini && \
         echo "xdebug.remote_enable=1" >> /etc/php/7.3/fpm/conf.d/20-xdebug.ini && \
         echo "xdebug.remote_autostart=1" >> /etc/php/7.3/fpm/conf.d/20-xdebug.ini && \
