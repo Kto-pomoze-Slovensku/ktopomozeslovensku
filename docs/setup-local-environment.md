@@ -20,9 +20,7 @@ git clone https://github.com/Kto-pomoze-Slovensku/ktopomozeslovensku.git
 ## Step 2 - Create .env file with environment variables
 Navigate to the root folder of your cloned repository and create and save .env file with following contents:
 ```
-KERNEL_CLASS='App\Kernel'
 SYMFONY_DEPRECATIONS_HELPER=999999
-PANTHER_APP_ENV=panther
 DATABASE_URL="mysql://project:Password1@ktopomozeslovensku-mysql:3306/project?serverVersion=5.7"
 ADMIN_PWD=''
 SENTRY_DSN=''
