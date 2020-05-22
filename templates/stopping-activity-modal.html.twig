@@ -53,7 +53,7 @@
       </p>
       <h3 class="article__heading">Čo sa nám spoločne podarilo</h3>
       <div>
-        <p>K dnešnému dňu sme vyzbierali <b>{{ account_credit() }} €</b> a za všetky tieto finančné prostriedky sme
+        <p>K dnešnému dňu sme vyzbierali <b>{{ account_credit() | number_format(2, ',', ' ') }} &euro;</b> a za všetky tieto finančné prostriedky sme
           zabezpečili pomoc pre zdravotníkov a ľudí v prvej línii, ktorá im pomohla bojovať s rizikom nákazy:</p>
         <ul>
           <li>viac ako <b>268 tisíc rôznych rúšok a respirátorov</b></li>
