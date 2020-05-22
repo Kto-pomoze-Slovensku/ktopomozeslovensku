@@ -30,6 +30,7 @@
 
   <!-- stylesheets -->
   <link rel="stylesheet" type="text/css" href="{{ asset('static/css/' ~ css_asset('public.css')) }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta name="google-site-verification" content="GNZJcGcEP32Lfr96IpFg70GRf3QpJ-cofikAstxu7sg"/>
@@ -69,6 +70,19 @@
 <footer>
   {% embed "partials/footer.html.twig" %}{% endembed %}
 </footer>
+<div id="stopping-activity-modal">
+  {% embed "stopping-activity-modal.html.twig" %}{% endembed %}
+</div>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<script>
+$("#stopping-activity-modal").modal({
+  escapeClose: true,
+  clickClose: false,
+  showClose: true
+})
+</script>
 </body>
 </html>

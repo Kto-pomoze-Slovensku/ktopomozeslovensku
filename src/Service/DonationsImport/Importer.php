@@ -94,7 +94,8 @@ final class Importer
     private function importRows(DonationImport $import): void
     {
         foreach ($this->reader as $row) {
-            if (!trim($row[0]) && !trim($row[1]) && !trim($row[2]) && !trim($row[3])) {
+            if (!isset($row[0], $row[1], $row[2], $row[3]) ||
+                (!trim($row[0]) && !trim($row[1]) && !trim($row[2]) && !trim($row[3]))) {
                 return;
             }
 

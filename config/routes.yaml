@@ -13,27 +13,27 @@ contact:
   path: /kontakt
   controller: App\Controller\ContactController::index
 
-donation:
-  methods: GET
-  path: /darujem
-  controller: App\Controller\DonationController::index
+#donation:
+#  methods: GET
+#  path: /darujem
+#  controller: App\Controller\DonationController::index
+#
+#donation_finance:
+#  methods: GET|POST
+#  path: /darujem-financnu-pomoc
+#  controller: App\Controller\DonationController::finance
+#
+#donation_nonfinance:
+#  methods: GET|POST
+#  path: /darujem-nefinancnu-pomoc
+#  controller: App\Controller\DonationController::nonFinance
 
-donation_finance:
-  methods: GET|POST
-  path: /darujem-financnu-pomoc
-  controller: App\Controller\DonationController::finance
-
-donation_nonfinance:
-  methods: GET|POST
-  path: /darujem-nefinancnu-pomoc
-  controller: App\Controller\DonationController::nonFinance
-
-donation_success:
-  methods: GET|POST
-  path: /darujem/dakujeme
-  controller: App\Controller\DonationController::success
-  options:
-    hide_in_sitemap: true
+#donation_success:
+#  methods: GET|POST
+#  path: /darujem/dakujeme
+#  controller: App\Controller\DonationController::success
+#  options:
+#    hide_in_sitemap: true
 
 export_dopyt:
   methods: GET
@@ -49,17 +49,17 @@ export_ponuka:
   options:
     hide_in_sitemap: true
 
-help_request:
-  methods: GET|POST
-  path: /ziadost-o-pomoc
-  controller: App\Controller\HelpRequestController::index
-
-help_request_success:
-  methods: GET
-  path: /ziadost-o-pomoc/dakujeme
-  controller: App\Controller\HelpRequestController::success
-  options:
-    hide_in_sitemap: true
+#help_request:
+#  methods: GET|POST
+#  path: /ziadost-o-pomoc
+#  controller: App\Controller\HelpRequestController::index
+#
+#help_request_success:
+#  methods: GET
+#  path: /ziadost-o-pomoc/dakujeme
+#  controller: App\Controller\HelpRequestController::success
+#  options:
+#    hide_in_sitemap: true
 
 policy:
   methods: GET
