@@ -3,16 +3,16 @@
 {% block main %}
   <div class="l-container">
     <header class="hero">
-      <h1 class="hero__heading">Pomoc pre slovenské zdravotnícke zariadenia</h1>
-      <p class="hero__subheading">Aby sme spolu zvládli pandémiu koronavírusu, pridajte sa!</p>
+      <h1 class="hero__heading">Ďakujeme, spoločne sme to zvládali, pomohli sme slovenským zdravotníckym
+        zariadeniam.</h1>
     </header>
 
     {% include "partials/donated.html.twig" %}
   </div>
 
-  <div class="l-container l-container--no-padding">
-    {% include "partials/recru.html.twig" %}
-  </div>
+  {#  <div class="l-container l-container--no-padding">#}
+  {#    {% include "partials/recru.html.twig" %}#}
+  {#  </div>#}
 
   <div class="l-container">
     {% include "partials/need-help.html.twig" %}
@@ -40,8 +40,10 @@
       </header>
 
       <div class="article__body">
-        <p>Prečo to robíme? Lebo všetkého je nedostatok. Pomáhame slovenským zdravotníckym zariadeniam zvládnuť pandémiu koronavírusu cez prehľadný systém financovania a zabezpečenia materiálnej pomoci pre nemocnice a domovy sociálnych služieb. Zapojiť sa môže každý, kto chce a môže.</p>
-
+        <p>Prečo sme to všetko urobili? Lebo všetkého bol nedostatok. Pomáhali slovenským zdravotníckym zariadeniam
+          zvládnuť pandémiu koronavírusu cez prehľadný systém financovania a zabezpečenia materiálnej pomoci pre
+          nemocnice a domovy sociálnych služieb. Dnes pozorne sledujeme situáciu s odstupom a veríme, že vďaka aplikácii
+          pomoci sa naďalej v pomoci sa môže zapojiť každý, kto chce a môže.</p>
         <a href="{{ path('about') }}">Čítajte viac</a>
       </div>
     </article>

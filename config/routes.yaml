@@ -49,11 +49,11 @@ export_ponuka:
   options:
     hide_in_sitemap: true
 
-#help_request:
-#  methods: GET|POST
-#  path: /ziadost-o-pomoc
-#  controller: App\Controller\HelpRequestController::index
-#
+help_request:
+  methods: GET|POST
+  path: /aplikacia-pomoci
+  controller: App\Controller\HelpRequestController::index
+
 #help_request_success:
 #  methods: GET
 #  path: /ziadost-o-pomoc/dakujeme

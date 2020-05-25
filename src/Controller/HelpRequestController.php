@@ -25,19 +25,6 @@ use Symfony\Component\HttpFoundation\Response;
 final class HelpRequestController extends AbstractController
 {
     /**
-     * @var HelpRequestService
-     */
-    private $service;
-
-    /**
-     * @param HelpRequestService $service
-     */
-    public function __construct(HelpRequestService $service)
-    {
-        $this->service = $service;
-    }
-
-    /**
      * @param Request $request
      *
      * @return Response
@@ -45,23 +32,7 @@ final class HelpRequestController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        $helpRequest = new HelpRequestForm();
-        $form = $this->createForm(HelpRequestType::class, $helpRequest);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var HelpRequestForm $helpRequest */
-            $helpRequest = $form->getData();
-            $this->service->save($helpRequest);
-            return $this->redirectToRoute('help_request_success');
-        }
-
-        return $this->render(
-            'help-request.html.twig',
-            [
-                'form' => $form->createView()
-            ]
-        );
+        return $this->render('help-application.html.twig');
     }
 
     /**
