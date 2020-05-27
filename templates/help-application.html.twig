@@ -1,0 +1,139 @@
+{% extends "layout.html.twig" %}
+{% block title %}Aplikácia pomoci | Kto pomôže Slovensku{% endblock %}
+{% block main %}
+  <div class="l-container">
+    <h1 class="hero__heading-standalone h2">Naďalej potrebujete pomoc?</h1>
+
+    <article class="article">
+      <div class="article__body margin-bottom-large">
+        <p>Ak naďalej hľadáte pomoc, alebo chcete ponúknuť pomoc, môžete použiť aplikáciu pomoci. O materiálnu pomoc
+          môžu žiadať a pomoc môžu ponúknuť všetky zdravotnícke zariadenia — štátne aj súkromné. Rovnako tiež domovy
+          sociálnych služieb a zariadenia pre seniorov, ako aj samosprávy a , občianske združenia, nadácie poskytujúce
+          starostlivosť o zraniteľné skupiny obyvateľstva.</p>
+      </div>
+
+      <a href="https://kps.solved.fi" class="button button--primary button--center">
+        Aplikácia pomoci
+      </a>
+    </article>
+  </div>
+
+  <section class="jumbotron jumbotron--grey jumbotron--support">
+    <div class="jumbotron__inner">
+      <h3 class="jumbotron--support__heading">Ako pracovať s aplikáciou</h3>
+
+      <div class="jumbotron__content jumbotron--support__content">
+        <p class="vertical-list">
+          <a href="{{ asset('static/data/PC_manual_dopyt.pdf') }}" class="result__share">
+            <i class="icon-arrow-right icon-large"></i>
+            Manuál na tvorbu dopytu
+          </a>
+          <a href="{{ asset('static/data/PC_manual_ponuka.pdf') }}" class="result__share">
+            <i class="icon-arrow-right icon-large"></i>
+            Manuál na tvorbu ponuky
+          </a>
+          <a href="{{ asset('static/data/PC_manual_organizacia.pdf') }}" class="result__share">
+            <i class="icon-arrow-right icon-large"></i>
+            Manuál na tvorbu organizácie
+          </a>
+          <a href="https://drive.google.com/file/d/16162V0TgcucAClEzYVyLL4MPZvXEfWhr/view?usp=drivesdk" class="result__share">
+            <i class="icon-arrow-right icon-large"></i>
+            Video ako tvoriť dopyt
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="margin-bottom-large"></div>
+
+  <div class="l-container">
+    <article class="article">
+      <header>
+        <h3 class="article__heading">Často kladené otázky</h3>
+      </header>
+      <div class="article__body">
+        <dl class="faq">
+          <dt class="faq__q"><b>Prečo vznikla aplikácia Kto pomôže Slovensku?</b></dt>
+          <dd class="faq__a">Aj keď sa situácia upokojuje, potreba materiálnej a dobrovoľníckej pomoci je stále aktuálna. Keďže sme ukončili získavanie prostriedkov a ďalšie dopyty už nebudeme môcť naplniť, vytvorili sme na základe získaných skúseností aplikáciu. Cieľom aplikácie je prepájať ľudí, firmy a organizácie, ktoré ponúkajú pomoc s organizáciami a jednotlivcami, ktorí o pomoc žiadajú. Zdravotnícke zariadenia, sociálne zariadenia ale aj mimovládne a pomáhajúce organizácie budú môcť prostredníctvom tejto aplikácie získať potrebnú pomoc a podporu.</dd>
+
+          <dt class="faq__q"><b>Kto stojí za aplikáciou Kto pomôže Slovensku?</b></dt>
+          <dd class="faq__a">Aplikáciu pre vás pripravil tím Kto pomôže Slovensku. Platformu ponúkol Solved s.r.o. Administrátorom aplikácie bude Nadácia Pontis.</dd>
+
+          <dt class="faq__q"><b>Môžem byť žiadateľ a zároveň darca?</b></dt>
+          <dd class="faq__a">Áno. Každý užívateľ môže vytvoriť ponuku pomoci. Žiadať o pomoc už môžu len overení používatelia zastupujúci overenú organizáciu. Údaje v registračnom formulári sú informatívne. Zvoľte si to, čo najviac zodpovedá realite.</dd>
+
+          <dt class="faq__q"><b>Čo ak žiadam pre viaceré pobočky/ oddelenia?</b></dt>
+          <dd class="faq__a">Aplikácia slúži na prepájanie darcov, firiem a organizácií. Veríme, že sa na Slovensku nájde stále veľa ľudí ochotných pomôcť.</dd>
+
+          <dt class="faq__q"><b>O čo všetko môžem v rámci aplikácie požiadať?</b></dt>
+          <dd class="faq__a">Požiadať môžete o rôzne formy materiálnej aj dobrovoľníckej pomoci. Ak vám chýby vhodná kategória pomoci alebo konkrétny materiál či typ dobrovoľníckej pomoci, neváhajte kontaktovať administrátora.</dd>
+
+          <dt class="faq__q"><b>Ako zabezpečíte, že nedôjde k zneužívaniu pomoci?</b></dt>
+          <dd class="faq__a">Záleží nám na tom, aby sa pomoc dostala do správnych rúk. Dopyt po pomoci si môžu vytvoriť iba tí používatelia, ktorí sú priradení k overenej organizácii. Pri overovaní organizácií vychádzame zo zoznamu Kto pomôže Slovensku. Ďalšie organizácie sú preverované cez systém garantov.</dd>
+        </dl>
+      </div>
+    </article>
+  </div>
+
+  <div class="l-container">
+    <article class="article">
+      <div class="article__body text-center">
+        <header>
+          <h3 class="margin-bottom">Administrátori aplikácie a kontakt</h3>
+        </header>
+        <p class="p2 margin-bottom-x-large">
+          Aplikáciu administruje Nadácia Pontis.<br><br>
+          <b>Kontakt:</b> Jana Desiatniková<br>
+          <a href="mailto:jana.desiatnikova@nadaciapontis.sk">jana.desiatnikova@nadaciapontis.sk</a><br>
+          <a href="tel:+421 918 522 554">+421 918 522 554</a>
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div class="l-container">
+    <article class="article">
+      <header>
+        <h3 class="article__heading"> Garanti aplikácie Kto pomôže Slovensku</h3>
+      </header>
+      <div class="article__body">
+        <p>Overovanie organizácií, nastavenie kategórii pomoci a vyhodnocovanie urgentnosti zabezpečujú garanti:</p>
+        <ul class="l-list">
+          <li>
+            <p class="p3">
+              <strong>Lucia Šicková,</strong> Kto pomôže Slovensku
+            </p>
+          </li>
+          <li>
+            <p class="p3">
+              <strong>Mária Radvaková,</strong> Občianska agentúra komunitného rozvoja
+            </p>
+          </li>
+          <li>
+            <p class="p3">
+              <strong>Viera Vrankova,</strong> Slovenská katolícka charita
+            </p>
+          </li>
+          <li>
+            <p class="p3">
+              <strong>Andrea Najvirtová,</strong> Človek v ohrození
+            </p>
+          </li>
+          <li>
+            <p class="p3">
+              <strong>MUDr. Pavol Andel,</strong> zubný lekár
+            </p>
+          </li>
+          <li>
+            <p class="p3">
+              <strong>Alexandra Karova,</strong> Vagus
+            </p>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+{% endblock %}
+
