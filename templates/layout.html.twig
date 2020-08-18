@@ -70,51 +70,5 @@
 <footer>
   {% embed "partials/footer.html.twig" %}{% endembed %}
 </footer>
-
-<div id="stopping-activity-modal">
-  {% embed "stopping-activity-modal.html.twig" %}{% endembed %}
-</div>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-<script>
-const cookieName = "kps-modal-viewed";
-
-function setCookie(name,value,days) {
-  let expires = "";
-  if (days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days*24*60*60*1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "")  + expires + "; SameSite=Strict; path=/";
-}
-
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  console.log(ca);
-  for(let i=0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0)===' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-}
-
-if (getCookie(cookieName) === null) {
-  $("#stopping-activity-modal").modal({
-    escapeClose: true,
-    clickClose: false,
-    showClose: true
-  })
-}
-
-$('#stopping-activity-modal').on($.modal.BEFORE_CLOSE, function(event, modal) {
-  setCookie("kps-modal-viewed", 1, 365);
-});
-
-</script>
 </body>
 </html>
