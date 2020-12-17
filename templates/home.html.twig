@@ -3,15 +3,47 @@
 {% block main %}
   <div class="l-container">
     <header class="hero">
-      <h1 class="article__heading">Ďakujeme, na jar sme to spoločne zvládali, pomohli sme slovenským zdravotníckym zariadeniam.</h1>
+      <h1 class="article__heading">Pandemická situácia je vážna.</h1>
+      <div class="l-container">
+        <div class="article" style="margin-bottom: 0px;">
+          <p>Počty prípadov rastú a nemocnice aj zdravotníci sú preťažení. Kto pomôže Slovensku? My všetci a každý z nás
+            zároveň - tým, že budeme dodržiavať a šíriť <a
+              href="{{ asset('static/img/desatoro_bezpecnych_vianoc.jpg') }}">Desatoro</a> pre
+            bezpečné Vianoce od našich vedcov. KPS sa spája s Veda pomáha - COVID 19, aby sme pomohli šíriť vianočné
+            desatoro a pomohli dostať pandémiu na Slovebnsku počas Vianoc pod kontrolu. Zároveň opätovne zbierame
+            finančné
+            prostriedky na pomoc pre zdravotníkov a ľudí v prvej línii, ktorí pomáhajú v rôznych komunitách. Podporíme
+            aj
+            vedcov, aby boli viac počuť, vedecké poznatky a ich rady sa dostali k ľuďom. Pridajte sa k nám a prispejte,
+            musíme sa o seba opriet, zvládneme to.</p>
+        </div>
+      </div>
     </header>
+  </div>
+  <div class="l-container">
+    <section class="article" style="display: flex; margin-bottom: 20px;">
+      <div style="flex: 1; padding: 20px;">
+        <img src="/static/img/qrcode.png" alt="PAY by square QR kód"
+             style="width: 300px;margin-top: 16px;max-width: 100%;">
+      </div>
+      <div style="flex: 1; padding: 20px;">
+        <a href="viamo://?requestString=QP%3A1.0*BID%3AKTOPOMOZESLOVENSKU*SIG%3A0E9BC6DCAD5CE77F0C909F11384C54F3"><img
+            src="/static/img/viamo.png" alt="Viamo QR kód" style="width: 300px;margin-top: 16px;max-width: 100%;"></a>
+      </div>
+    </section>
+    <section class="article">
+      <header>
+        <h3 style="text-align: center;">Transparentný účet:</h3>
+        <span style=" text-align:center; font-size: 36px; font-weight: bold">SK2683300000002901467117</span>
+      </header>
+    </section>
 
     {% include "partials/donated.html.twig" %}
   </div>
 
-  {#  <div class="l-container l-container--no-padding">#}
-  {#    {% include "partials/recru.html.twig" %}#}
-  {#  </div>#}
+  {# <div class="l-container l-container--no-padding"> #}
+  {# {% include "partials/recru.html.twig" %} #}
+  {# </div> #}
 
   <div class="l-container">
     {% include "partials/need-help.html.twig" %}
