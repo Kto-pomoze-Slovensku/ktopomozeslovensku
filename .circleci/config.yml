@@ -5,7 +5,7 @@ orbs:
 jobs:
   dev:
     docker:
-      - image: circleci/php:7.3-node-browsers
+      - image: circleci/php:7.4-node-browsers
 
     environment:
       APP_ENV: dev
@@ -57,7 +57,7 @@ jobs:
 
   prod:
     docker:
-      - image: circleci/php:7.3-node-browsers
+      - image: circleci/php:7.4-node-browsers
 
     environment:
       APP_ENV: prod

@@ -273,9 +273,6 @@
     "ralouphie/getallheaders": {
         "version": "3.0.3"
     },
-    "roave/security-advisories": {
-        "version": "dev-master"
-    },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
         "recipe": {
@@ -699,11 +696,5 @@
     },
     "webmozart/assert": {
         "version": "1.7.0"
-    },
-    "zendframework/zend-code": {
-        "version": "3.4.1"
-    },
-    "zendframework/zend-eventmanager": {
-        "version": "3.2.1"
     }
 }
