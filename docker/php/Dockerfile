@@ -8,7 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update && \
-    apt-get install -y python3-pip sqlite3 libsqlite3-dev nodejs ant git yarn vim-tiny zsh php7.3-xdebug php7.3-mysql php7.4-mysql && \
+    apt-get install -y python3-pip sqlite3 libsqlite3-dev nodejs ant git yarn vim-tiny zsh php7.3-mysql php7.3-mysql && \
     pip3 install sqlitebiter && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
